@@ -1,0 +1,25 @@
+services:
+  web:
+    build:
+      context: .
+    ports:
+      - 127.0.0.1:5000:5000
+    working_dir: /app
+    volumes:
+      - ./:/app
+    environment:
+      MYSQL_HOST: localhost
+      MYSQL_USER: root
+      MYSQL_PASSWORD: minhQuanLOV3
+      MYSQL_DB: qlsv
+
+  mysql:
+    image: mysql
+    volumes:
+      - db_qlsv:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: minhQuanLOV3
+      MYSQL_DATABASE: qlsv
+
+volumes:
+  db_qlsv:

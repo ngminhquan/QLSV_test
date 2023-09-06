@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+   <body>
+      <h2 style = "text-align: center;">Quan Ly Sinh Vien</h2>
+      <h1>Danh sách sinh viên</h1>
+      <table>
+        <tr>
+            <th>ID</th>
+            <th>Họ và tên</th>
+            <!-- Thêm các cột khác tùy theo cấu trúc của bảng students -->
+        </tr>
+        {% for student in students %}
+        <tr>
+            <td>{{ student[0] }}</td>
+            <td>{{ student[1] }}</td>
+            <td>{{ student[2] }}</td>
+            <!-- Thêm các cột khác tùy theo cấu trúc của bảng students -->
+        </tr>
+        {% endfor %}
+      </table>
+      
+
+      <a href = "http://localhost:5000/student/add">Add</a>
+      <a href = "http://localhost:5000/student/edit">Edit</a>
+      <a href = "http://localhost:5000/student/delete">Delete</a>
+        
+
+   </body>
+</html>
